@@ -4,15 +4,16 @@
 
 #define MAXLINELENGTH 1000
 
-/* convert a string formatted input line 
+/* Convert a string formatted input line 
  * into hexadecimal digits, stored in a 
  * character array
  * format for arguments: out = in */
 void processline(char *out, char *in)
 {
+
 }
 
-/* return the number of input lines */
+/* Get the number of input lines, returning the value */
 int getNinputlines() 
 {
 	int n;
@@ -26,8 +27,9 @@ int getNinputlines()
 
 int main()
 {
-	/* number of input lines */
 	int n = getNinputlines();
+
+
 
 	return 0;
 }
