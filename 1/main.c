@@ -2,7 +2,12 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* external function declarations */
+#include "functions.h"
+
+/* maximum input line length */
 #define MAXLINELENGTH 1000
+
 
 /* Convert a string formatted input line 
  * into hexadecimal digits, stored in a 
@@ -13,23 +18,23 @@ void processline(char *out, char *in)
 
 }
 
-/* Get the number of input lines, returning the value */
-int getNinputlines() 
-{
-	int n;
-	printf("Enter number of input lines: ");
-	scanf("%d", &n);
-#ifdef DEBUG
-	printf("DEBUG: Call to getNinputlines(): User entered %d input lines\n", n);
-#endif
-	return n;
-}
-
 int main()
 {
+	/* prompt the user for the number of input lines */
 	int n = getNinputlines();
 
+	/* declare a generic counter variable */
+	int i;
 
+	/* buffer to store the string formatted line */
+	char *linebuf = malloc(MAXLINELENGTH + 1);
+
+	for(i = 0; i < n; i++) {
+		printf("Enter input line %d\n", i);
+	}
+
+	/* tidy up */
+	free(linebuf);
 
 	return 0;
 }

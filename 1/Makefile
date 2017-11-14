@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=Wall
 
 all:
-	$(CC) -$(CFLAGS) main.c -o main 
+	$(CC) -$(CFLAGS) main.c functions.c -o main 
 debug:
-	$(CC) -$(CFLAGS) main.c -o main -DDEBUG
+	$(CC) -$(CFLAGS) main.c functions.c -o main -DDEBUG
 
