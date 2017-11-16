@@ -47,9 +47,10 @@ int main()
 	} line[n];
 
 	for(i = 0; i < n; i++) {
-		printf("Enter input line %d\n", i);
+		printf("Input line %d: ", i + 1);
 		
 	}
+	printf("\n");
 
 	/* tidy up */
 	free(linebuf);
