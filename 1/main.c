@@ -6,7 +6,7 @@
 #include "functions.h"
 
 /* maximum input line length */
-#define MAXLINELENGTH (1000)
+#define MAXLINELENGTH (2000)
 
 
 /* Convert a string formatted input line into hexadecimal digits, stored in a 
@@ -31,7 +31,11 @@ size_t processline(char *out, char *in)
 int main()
 {
 	/* prompt the user for the number of input lines */
-	int n = getNinputlines();
+	int n;
+	if (! (n = getNinputlines()) ) {
+		printf("Invalid number of input lines entered. Exiting.\n");
+		return EXIT_FAILURE;
+	}
 
 	/* buffer to store the string formatted line */
 	char *linebuf = malloc(MAXLINELENGTH + 1);
@@ -46,13 +50,13 @@ int main()
 	for(int i = 0; i < n; i++) {
 		printf("Input line %d: ", i + 1);
 		scanf("%s", linebuf);
+		line[i].hexline = malloc(strlen(linebuf)/2);
 		line[i].linelen = processline(line[i].hexline, linebuf);
 	}
 	
-	printf("\n");
-
 	/* tidy up */
+	for(int i = 0; i < n; i++)
+		free(line[i].hexline);
 	free(linebuf);
-
 	return 0;
 }
