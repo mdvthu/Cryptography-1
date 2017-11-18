@@ -8,26 +8,6 @@
 /* maximum input line length */
 #define MAXLINELENGTH (2000)
 
-
-/* Convert a string formatted input line into hexadecimal digits, stored in a 
- * character array format for arguments: out = in */
-size_t processline(char *out, char *in)
-{
-	char *out_pos = out;
-	char *in_pos = in;
-
-	while(*in_pos != '\0') {
-		if(sscanf(in, "%2hhx", out_pos) != 2) {
-			in_pos++;
-			break;
-		}
-		in_pos += 2;
-		out_pos++;
-	}
-
-	return out_pos - out;
-}
-
 int main()
 {
 	/* prompt the user for the number of input lines */
