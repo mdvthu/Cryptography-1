@@ -24,13 +24,17 @@ int main()
 	 * and metadata including length of the line */
 	struct lines {
 		char *hexline;
-		unsigned int linelen;
+		size_t linelen;
 	} line[n];
 	
+	/* collect and process each line */
 	for(int i = 0; i < n; i++) {
 		printf("Input line %d: ", i + 1);
+		/* load the input into the line buffer */
 		scanf("%s", linebuf);
+		/* allocate memory to hold the processed line */
 		line[i].hexline = malloc(strlen(linebuf)/2);
+		/* process the line, storing the return value in the struct */
 		line[i].linelen = processline(line[i].hexline, linebuf);
 	}
 	
