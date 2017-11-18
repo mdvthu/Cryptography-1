@@ -12,7 +12,7 @@ int main()
 {
 	/* prompt the user for the number of input lines */
 	int n;
-	if (! (n = getNinputlines()) ) {
+	if (!(n = getNinputlines())) {
 		printf("Invalid number of input lines entered. Exiting.\n");
 		return EXIT_FAILURE;
 	}
@@ -42,5 +42,6 @@ int main()
 	for(int i = 0; i < n; i++)
 		free(line[i].hexline);
 	free(linebuf);
-	return 0;
+
+	return EXIT_SUCCESS;
 }

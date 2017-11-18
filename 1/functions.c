@@ -1,5 +1,6 @@
 #include <stdio.h>
 
+/* getNinputlines() */
 /* Get the number of input lines, returning the value */
 int getNinputlines() 
 {
@@ -12,10 +13,12 @@ int getNinputlines()
 	return n;
 }
 
+/* processline() */
 /* Convert a string formatted input line into hexadecimal digits, stored in a 
  * character array format for arguments: out = in */
 size_t processline(char *out, char *in)
 {
+	/* copy the initial pointers to keep track of positions */
 	char *out_pos = out;
 	char *in_pos = in;
 
@@ -28,6 +31,7 @@ size_t processline(char *out, char *in)
 		out_pos++;
 	}
 
+	/* return the length of the hex formatted line */
 	return out_pos - out;
 }
 
