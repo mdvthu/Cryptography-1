@@ -11,11 +11,7 @@
 int main()
 {
 	/* prompt the user for the number of input lines */
-	int n;
-	if (!(n = getNinputlines())) {
-		printf("Invalid number of input lines entered. Exiting.\n");
-		return EXIT_FAILURE;
-	}
+	int n = getNinputlines(); 
 
 	/* buffer to store the string formatted line */
 	char *linebuf = malloc(MAXLINELENGTH + 1);
