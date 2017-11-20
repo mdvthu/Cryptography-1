@@ -6,9 +6,9 @@ int getNinputlines()
 {
 	int n;
 	printf("Enter number of input lines: ");
+	/* continue to get input until a valid integer is entered */
 	while (scanf("%d", &n) != 1 || n <= 0)
 		printf("Invalid number of input lines entered. Please enter a positive integer: ");
-
 #ifdef DEBUG
 	printf("DEBUG: Call to getNinputlines(): User entered %d input lines\n", n);
 #endif
