@@ -8,6 +8,13 @@
 /* maximum input line length */
 #define MAXLINELENGTH (2000)
 
+/* plan:
+ * 1) enter number of input lines
+ * 2) process each input line into hex lines, line by line, storing data into a structure
+ * 3) line by line, N ^ N+1, crib drag " a ", " in ", " the " etc
+ * 4) store sucessful matches, look for key
+ */
+
 int main()
 {
 	/* prompt the user for the number of input lines */
