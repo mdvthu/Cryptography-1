@@ -15,6 +15,11 @@
  * 4) store sucessful matches, look for key
  */
 
+/* to do:
+ * 1) doxygen documentation 
+ * 2) lint and other source code analysers 
+ */
+
 int main()
 {
 	/* prompt the user for the number of input lines */
