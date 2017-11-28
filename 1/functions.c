@@ -4,13 +4,16 @@
 /* Get the number of input lines, returning the value */
 int getNinputlines() 
 {
+#ifdef DEBUG
+	printf("DEBUG: Call to getNinputlines()\n");
+#endif
 	int n;
 	printf("Enter number of input lines: ");
 	/* continue to get input until a valid integer is entered */
 	while (scanf("%d", &n) != 1 || n <= 0)
 		printf("Invalid number of input lines entered. Please enter a positive integer: ");
 #ifdef DEBUG
-	printf("DEBUG: Call to getNinputlines(): User entered %d input lines\n", n);
+	printf("User entered %d input lines\n", n);
 #endif
 	return n;
 }
@@ -18,7 +21,7 @@ int getNinputlines()
 /* processline() */
 /* Convert a string formatted input line into hexadecimal digits, stored in a 
  * character array format for arguments: out = in */
-size_t processline(char *out, char *in)
+void processline(char *out, char *in)
 {
 	/* copy the initial pointers to keep track of positions */
 	char *out_pos = out;
@@ -33,8 +36,9 @@ size_t processline(char *out, char *in)
 		out_pos++;
 	}
 
-	/* return the length of the hex formatted line */
-	return out_pos - out;
+#ifdef DEBUG
+	printf("DEBUG: Call to processlines(char *out, char *in): Hex formatted line length appears as %zd\n", out_pos - out);
+#endif
 }
 
 

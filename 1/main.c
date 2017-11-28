@@ -42,10 +42,22 @@ int main()
 		scanf("%s", linebuf);
 		/* allocate memory to hold the processed line */
 		line[i].hexline = malloc(strlen(linebuf)/2);
+		/* calculate the line length from the input string length */
+		line[i].linelen = strlen(linebuf) / 2;
 		/* process the line, storing the return value in the struct */
-		line[i].linelen = processline(line[i].hexline, linebuf);
+		processline(line[i].hexline, linebuf);
+	}
+
+	for(int i = 0; i < line[0].linelen; i++) {
+#ifdef DEBUG
+		printf("DEBUG: Printing line 0, hex %d\n", i);
+#endif
+		printf("%2X ", line[0].hexline[0]);
 	}
 	
+	printf("\n");
+
+
 	/* tidy up */
 	for(int i = 0; i < n; i++)
 		free(line[i].hexline);

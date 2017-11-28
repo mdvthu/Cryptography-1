@@ -6,6 +6,6 @@ int getNinputlines();
 
 /* Convert a string formatted input line into hexadecimal digits, stored in a 
  * character array format for arguments: out = in */
-size_t processline(char *out, char *in);
+void processline(char *out, char *in);
 
 #endif
