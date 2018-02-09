@@ -1,10 +1,20 @@
 #!/usr/bin/env python3
 
-# 1. choose a random integer within limits
-# limits for choosing a random number
-u_limit = 2**1025 - 1
-l_limit = 2**1024
+from random import randint
 
-# 2. test [ 2**(p-1) == 1 in Zp ]? If True, stop
-# Otherwise, go back to 1.
+# limits for choosing a random number
+# l_limit = 2**1024
+# u_limit = 2**1025 - 1
+# Small limits used for testing
+l_limit=10
+u_limit=1000
+
+while True:
+    # 1. choose a random integer within limits
+    r = randint(l_limit, u_limit)
+    # 2. test [ 2**(p-1) == 1 in Zp ]? If True, stop
+    # Otherwise, go back to 1.
+    if ((2 ** (r-1))%r) == 1:
+        print(r)
+        break
 
