@@ -5,6 +5,7 @@
 /* external function declarations */
 #include "functions.h"
 
+/* Define a new macro for the preprocessor */
 /* maximum input line length */
 #define MAXLINELENGTH (2000)
 
@@ -34,6 +35,9 @@ int main()
 		line[i].linelen = processline(line[i].hexline, linebuf);
 	}
 	
+	for(int i=0; i < line[0].linelen; i++)
+		printf("%d: %2x ", i, line[0].hexline[i]);
+
 	/* tidy up */
 	for(int i = 0; i < n; i++)
 		free(line[i].hexline);

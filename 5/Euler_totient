@@ -1,0 +1,16 @@
+#!/usr/bin/env python3
+
+from fractions import gcd
+
+def main():
+    # Process user input
+    print("Enter N: ", end="")
+    n = int(input())
+
+    # Create a set of coprimes
+    s = [ i for i in range(1, n) if gcd(i, n) == 1 ]
+    print(s)
+    print(u'\u03C6({0}): {1}'.format(n, len(s)))
+
+if __name__ == '__main__':
+    main()
