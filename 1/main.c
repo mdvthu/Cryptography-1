@@ -9,6 +9,18 @@
 /* maximum input line length */
 #define MAXLINELENGTH (2000)
 
+/* plan:
+ * 1) enter number of input lines
+ * 2) process each input line into hex lines, line by line, storing data into a structure
+ * 3) line by line, N ^ N+1, crib drag " a ", " in ", " the " etc
+ * 4) store sucessful matches, look for key
+ */
+
+/* to do:
+ * 1) doxygen documentation 
+ * 2) lint and other source code analysers 
+ */
+
 int main()
 {
 	/* prompt the user for the number of input lines */
@@ -31,12 +43,26 @@ int main()
 		scanf("%s", linebuf);
 		/* allocate memory to hold the processed line */
 		line[i].hexline = malloc(strlen(linebuf)/2);
+		/* calculate the line length from the input string length */
+		line[i].linelen = strlen(linebuf) / 2;
 		/* process the line, storing the return value in the struct */
-		line[i].linelen = processline(line[i].hexline, linebuf);
+		processline(line[i].hexline, linebuf);
+	}
+
+	for(int i = 0; i < line[0].linelen; i++) {
+#ifdef DEBUG
+		printf("DEBUG: Printing line 0, hex %d\n", i);
+#endif
+		printf("%2X ", line[0].hexline[0]);
 	}
 	
+<<<<<<< HEAD
 	for(int i=0; i < line[0].linelen; i++)
 		printf("%d: %2x ", i, line[0].hexline[i]);
+=======
+	printf("\n");
+
+>>>>>>> 50a2bd2c6fb1cc12fdbb89a6d66c3fffe14a3958
 
 	/* tidy up */
 	for(int i = 0; i < n; i++)
