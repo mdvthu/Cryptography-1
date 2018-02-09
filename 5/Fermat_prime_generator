@@ -1,0 +1,10 @@
+#!/usr/bin/env python3
+
+# 1. choose a random integer within limits
+# limits for choosing a random number
+u_limit = 2**1025 - 1
+l_limit = 2**1024
+
+# 2. test [ 2**(p-1) == 1 in Zp ]? If True, stop
+# Otherwise, go back to 1.
+
