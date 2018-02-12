@@ -16,7 +16,10 @@ int main()
 	gmp_printf("2^1024: %Zd\n", l_lim);
 #endif
 
+	unsigned int count = 0;
+
 	while(1) {
+		count++;
 		/* cryptographically secure random seed
 		 * reseeding is required for each iteration */
 		unsigned long seed;
@@ -42,12 +45,12 @@ int main()
 
 		/* test: 2^(p-1) == 1 mod p */
 		if (mpz_cmp_ui(result, 1) == 0) {
-			gmp_printf("Large Fermat-probable prime: %Zd\n", rand_i);
+			gmp_printf("Large Fermat-probable prime: %Zd\nAchieved after %u iterations\n", rand_i, count);
 			break;
 		}
 
 #ifdef DEBUG
-		gmp_printf("Random: %Zd\n", rand_i);
+		gmp_printf("Random: %Zd (iteration %u)\n", rand_i, count);
 #endif
 	}
 
