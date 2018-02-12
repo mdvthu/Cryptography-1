@@ -3,7 +3,7 @@
 # Euler's generalisation of Fermat
 # Phi(N) = |(ZN)*| : Euler's totient function
 # useful because:
-# x ** Phi(N) = 1 in ZN
+# x ** Phi(N) = 1 in ZN, when x and N are coprime
 
 from fractions import gcd
 
@@ -15,6 +15,7 @@ def main():
     # Create a set of coprimes
     s = [ i for i in range(1, n) if gcd(i, n) == 1 ]
     print(s)
+    # 03C6 is unicode for phi
     print(u'\u03C6({0}): {1}'.format(n, len(s)))
 
 if __name__ == '__main__':
