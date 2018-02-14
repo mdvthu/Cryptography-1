@@ -2,10 +2,8 @@
 
 from random import randint
 
-# limits for choosing a random number
-# l_limit = 2**1024
-# u_limit = 2**1025 - 1
-# Small limits: Python can't handle the above limits
+# Small limits: Python can't handle the above limits (without external libs)
+# See bignum_Fermat.c for a C version using the GMP library
 l_limit=10
 u_limit=1000
 
